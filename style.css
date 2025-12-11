@@ -1,0 +1,217 @@
+/* --------- RESET --------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif; /* Clean sans-serif */
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/* --------- LAYOUT --------- */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* --------- NAVIGATION --------- */
+.site-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    position: sticky;
+    top: 0;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+.nav-left {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.home-link {
+    font-weight: 600;
+}
+
+.slash {
+    color: #444;
+}
+
+.page-title {
+    color: #888;
+}
+
+.back-btn {
+    border: 1px solid #333;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
+/* --------- HEADER --------- */
+.page-header {
+    padding: 6rem 0 4rem;
+}
+
+h1 {
+    font-family: 'Anton', sans-serif; /* Matching your Hub headers */
+    font-size: clamp(3rem, 8vw, 6rem);
+    text-transform: uppercase;
+    line-height: 0.95;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    color: #888;
+    max-width: 500px;
+}
+
+/* --------- PROJECTS --------- */
+.divider {
+    height: 1px;
+    background: #222;
+    margin: 3rem 0;
+    width: 100%;
+}
+
+.project-item {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* Split layout: Meta on left, Content on right */
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.project-meta {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Anton', sans-serif;
+    color: #444;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+}
+
+.project-meta .year {
+    color: #fff;
+}
+
+.project-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.tags {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.tags span {
+    font-size: 0.75rem;
+    border: 1px solid #333;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.description {
+    color: #ccc;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+}
+
+.details-list {
+    list-style: none;
+    padding: 0;
+    color: #888;
+    font-size: 0.95rem;
+}
+
+.details-list li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.details-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #444;
+}
+
+/* --------- FOOTER --------- */
+.site-footer {
+    padding: 4rem 0;
+    text-align: center;
+    color: #444;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+/* --------- ANIMATIONS --------- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --------- MOBILE --------- */
+@media (max-width: 768px) {
+    .project-item {
+        grid-template-columns: 1fr; /* Stack layout on mobile */
+        gap: 1rem;
+    }
+
+    .project-meta {
+        flex-direction: row;
+        gap: 1rem;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .page-header {
+        padding: 4rem 0 2rem;
+    }
+}
