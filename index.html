@@ -8,11 +8,13 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <canvas id="network-canvas"></canvas>
 
     <nav class="site-nav">
         <div class="nav-left">
@@ -38,11 +40,11 @@
         <div class="divider fade-in"></div>
 
         <section class="project-item fade-in">
-            <div class="project-meta">
-                <span class="year">2024</span>
-                <span class="location">UPENN ESAP</span>
-            </div>
-            <div class="project-content">
+            <div class="project-info">
+                <div class="project-meta">
+                    <span class="year">2024</span>
+                    <span class="location">UPENN ESAP</span>
+                </div>
                 <h2 class="project-title">Nanotechnology & Device Fabrication</h2>
                 <div class="tags">
                     <span>Nanoscience</span>
@@ -54,20 +56,59 @@
                 </p>
                 <ul class="details-list">
                     <li>Synthesized gold nanoparticles and analyzed optical properties using spectroscopy.</li>
-                    <li>Utilized Scanning Electron Microscopy (SEM) and Atomic Force Microscopy (AFM) for surface characterization.</li>
-                    <li>Developed protocols for thin-film deposition to control material properties at the atomic level.</li>
+                    <li>Utilized Scanning Electron Microscopy (SEM) and Atomic Force Microscopy (AFM).</li>
+                    <li>Developed protocols for thin-film deposition at the atomic level.</li>
                 </ul>
+            </div>
+
+            <div class="carousel-wrapper">
+                <div class="carousel-container" id="carousel-upenn">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="assets\microfluid.jpeg" alt="Cleanroom Gowning" loading="lazy">
+                            <div class="caption">
+                                <strong>Cleanroom Protocol:</strong> Preparing for ISO-5 environment entry.
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets\QD.jpeg" alt="SEM Microscopy" loading="lazy">
+                            <div class="caption">
+                                <strong>SEM Imaging:</strong> Characterizing gold nanoparticle distribution.
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets\SEM.jpeg" alt="Wafer Processing" loading="lazy">
+                            <div class="caption">
+                                <strong>Lithography:</strong> Silicon wafer processing and etching.
+                            </div>
+                        </div>
+                         <div class="carousel-slide">
+                            <img src="assets\spincast.jpeg" alt="Wafer Processing" loading="lazy">
+                            <div class="caption">
+                                <strong>Lithography:</strong> Silicon wafer processing and etching.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="carousel-btn prev-btn" aria-label="Previous image">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button class="carousel-btn next-btn" aria-label="Next image">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                    <div class="carousel-indicators"></div>
+                </div>
             </div>
         </section>
 
         <div class="divider fade-in"></div>
 
         <section class="project-item fade-in">
-            <div class="project-meta">
-                <span class="year">2023</span>
-                <span class="location">LBNL</span>
-            </div>
-            <div class="project-content">
+            <div class="project-info">
+                <div class="project-meta">
+                    <span class="year">2023</span>
+                    <span class="location">LBNL</span>
+                </div>
                 <h2 class="project-title">Indoor Air Quality Sensing</h2>
                 <div class="tags">
                     <span>Environmental Eng.</span>
@@ -75,13 +116,40 @@
                     <span>Python</span>
                 </div>
                 <p class="description">
-                    Conducted field research at Lawrence Berkeley National Labs to evaluate low-cost sensor performance in residential environments. The study aimed to improve ventilation strategies for energy-efficient buildings.
+                    Conducted field research at Lawrence Berkeley National Labs to evaluate low-cost sensor performance in residential environments to improve ventilation strategies.
                 </p>
                 <ul class="details-list">
-                    <li>Engineered a portable data logging system using microcontrollers to monitor CO2 and PM2.5.</li>
-                    <li>Wrote Python scripts to process large datasets, identifying sensor drift and correlation with reference instruments.</li>
-                    <li>Presented statistical findings on pollutant accumulation dynamics to the senior research team.</li>
+                    <li>Engineered a portable data logging system using microcontrollers.</li>
+                    <li>Wrote Python scripts to process large datasets and identify sensor drift.</li>
+                    <li>Presented statistical findings on pollutant accumulation dynamics.</li>
                 </ul>
+            </div>
+
+            <div class="carousel-wrapper">
+                <div class="carousel-container" id="carousel-lbnl">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="assets/research/lbnl-1.jpg" alt="Sensor Prototype" loading="lazy">
+                            <div class="caption">
+                                <strong>Sensor Prototype:</strong> Custom microcontroller setup for CO2 logging.
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/research/lbnl-2.jpg" alt="Data Analysis" loading="lazy">
+                            <div class="caption">
+                                <strong>Data Viz:</strong> Python-generated correlation matrix of pollutants.
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="carousel-btn prev-btn" aria-label="Previous image">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button class="carousel-btn next-btn" aria-label="Next image">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                    <div class="carousel-indicators"></div>
+                </div>
             </div>
         </section>
 
